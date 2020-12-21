@@ -25,6 +25,7 @@ public class CountingHaybales {
             int count = 0;
             //Utilize iterative binary search, O(log N) time compared to
             //linear search, which is O(N) time
+            //each index increment is one more hay bale, thus upperIndex - lowerIndex
             count = upperIndex(arr, n, upperbound) - lowerIndex(arr, n, lowerbound) + 1;
             pw.println(count);
         }
@@ -32,28 +33,28 @@ public class CountingHaybales {
     }
 
     public static int lowerIndex(long arr[], int n, long x) {
-        int l = 0;
-        int h = n - 1;
-        while (l <= h){
+        int l = 0; //lowerbound of temp range
+        int h = n - 1; //upperbound of temp range
+        while (l <= h){ //keep iterating until lowest index >= LB of query is found
             int mid = (l + h) / 2;
-            if (arr[mid] >= x)
-                h = mid - 1;
+            if (arr[mid] >= x) //if the middle element of temp range >= LB of query
+                h = mid - 1; //new temp range is lower half of old temp range
             else
-                l = mid + 1;
+                l = mid + 1; //else temp range is upper half of old temp range
         }
-        return l;
+        return l; //return lowest index
     }
 
     public static int upperIndex(long arr[], int n, long y) {
         int l = 0;
         int h = n - 1;
-        while (l <= h){
+        while (l <= h){ //keep iterating until highest index >= UB of query is found
             int mid = (l + h) / 2;
-            if (arr[mid] <= y)
-                l = mid + 1;
+            if (arr[mid] <= y) //if the middle element of temp range <= UB of query
+                l = mid + 1; //new temp range is upper half of old temp range
             else
-                h = mid - 1;
+                h = mid - 1; //else temp range is lower half of old temp range
         }
-        return h;
+        return h; //return highest index
     }
 }
