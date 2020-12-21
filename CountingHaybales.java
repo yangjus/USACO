@@ -1,9 +1,13 @@
+/*
+December 2016 Silver Problem: Counting Haybales
+Modified: Justin Y
+Iterative Binary Search from: https://www.geeksforgeeks.org/queries-counts-array-elements-values-given-range/
+*/
 import java.util.*;
 import java.io.*;
 
 public class CountingHaybales {
     public static void main (String[] args) throws IOException{
-        //Scanner sc = new Scanner(new File("/Users/kat/Desktop/Justin/USACO/src/haybales.in"));
         Scanner sc = new Scanner(new File("haybales.in"));
         PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("haybales.out")));
         int n = sc.nextInt();
