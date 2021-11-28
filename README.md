@@ -1,2 +1,2 @@
 # USACO Practice
-# Bronze and Silver Levels
+# Bronze and Silver
